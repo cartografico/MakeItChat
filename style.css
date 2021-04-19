@@ -1,0 +1,229 @@
+/* root colors */
+:root {
+  --Dark: #272640;
+  --Second: #1b3a4b;
+  --Third: #0b525b;
+  --Red: #441e44;
+  --White: #e6e5e7;
+}
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: red;
+  padding: 0;
+  overflow-y: hidden;
+}
+
+.Container{
+    display: grid;
+    height: 100vh;
+    grid-template-columns:  minmax(300px, 1fr) minmax(500px,4fr);
+    overflow:hidden;
+}
+
+.gridChannel{
+    display: grid;
+    height: 100%;
+    grid-template-rows: minmax(70px, 8px) 100vh;
+    box-sizing: border-box;
+}
+
+.search{
+    height: 80px;
+    width: 100%;
+    background-color: #272640;
+    display: flex;
+}
+
+.search>input{
+    display: inline-block;
+    width: 230px;
+    height: 30px;
+    margin: auto;
+    align-self: center;
+    border: 1px solid rgb(77, 77, 77);
+    border-radius: 15px;
+    background-color:#441e44;
+}
+.search>::-webkit-input-placeholder {
+    text-align: center;
+ } 
+
+.wrapperChannel{
+    display: grid;
+    width: 100%;
+    height: 95%;
+    background-color: #272640;  
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+.wrapperChannel::-webkit-scrollbar{
+    width: 7px;
+}
+
+.wrapperChannel:hover::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 15px;
+}
+
+ul{
+    padding: 0;
+    margin-left: 0px;
+    color: white;
+}
+
+li{
+    width: 100%;
+    height: auto;
+    list-style: none;
+    padding: 5px 5px 5px 30px;
+    font-size: 15px;
+}
+
+li:hover{
+    background-color: #441e44;
+}
+/* ------------------------------------------------------------------- */
+
+
+.gridMsg{
+    display: grid;
+    grid-template-rows:  minmax(60px,5vh) minmax(auto,80vh)  minmax(30px,15vh);
+
+}
+.nameChannel{
+    background-color: #441e44;
+    display: flex;
+    flex-direction: row;
+    padding: 5px 20px 5px 20px;
+}
+
+.nameChannel img {
+    display: block;
+    max-width: 20px;
+    max-height: 20px;
+    align-self: center;
+}
+.nameChannel p {
+    display: block;
+    align-self: center;
+    margin: 10px;
+    font-size: 17px;
+    color: white;
+    margin: 10px;
+    margin-left: 5px;
+
+}
+
+.msgContainer{
+    width: 100%;
+    height: auto;
+    background-color: #441e44;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    /* justify-content: flex-end; */
+}
+
+.msgContainer::-webkit-scrollbar{
+    width: 7px;
+}
+
+.msgContainer:hover::-webkit-scrollbar-thumb{
+    background: white;
+    border-radius: 15px;
+}
+
+.msgContainer .messageBox{
+    width: 80%;
+    height: auto;
+    padding: 10px;
+    margin: 10px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    color: white;
+    background-color: rgb(248,250,255, 0.1);
+}
+.msgContainer .messageBox .messageMetaData{
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+}
+.msgContainer .messageBox img {
+    width: 30px;
+    height: 30px;
+    font-size: 18;
+}
+
+.msgContainer .messageBox .userName {
+    height: 25px;
+    width: auto;
+    max-width: 150px;
+    margin: 0 10px;
+    font-size: 15px;
+}
+.msgContainer .messageBox .timeStamp {
+    height: 25px;
+    width: auto;
+    max-width: 150px;
+    margin:0 10px; 
+    font-size: 12px;
+}
+
+.msgContainer .messageBox p {
+    padding: 0;
+    margin: 0;
+    font-size: 14px;
+    line-height: 1.3;
+}
+
+/* ____________________________________ */
+.inputArea{
+    height: auto;
+    width: 100%;
+    min-height: 70px;
+    background-color:#441e44;
+    padding: 20px;
+    box-sizing: border-box;
+    display: flex;  
+}
+
+.inputForm {
+    /* background-color: red; */
+    height: 60px;
+    
+}
+ #messageBoxId{
+    width: 700px; 
+    min-width: 400px;
+    padding: 5px;
+    height: auto;
+    min-height: 30px;
+    border-radius: 5px;
+    border: 0;
+    margin-left: 15px;
+    margin-right:0;
+    background:#575675;
+    overflow-x: hidden;
+    overflow-y:scroll;
+    align-self: center;
+
+}
+
+.button{
+    width: 70px; 
+    padding: 5px;
+    height: auto;
+    min-height: 30px;
+    margin: 0;
+    margin-left: -30px;
+    border-radius: 5px;
+    border: 0;
+    margin-left: 15px;
+    margin-right: 10px;
+    background:#575675;
+    color: white;
+}
