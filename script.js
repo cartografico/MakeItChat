@@ -58,17 +58,26 @@ const arrayPrincipal = [
 ];
 console.log(arrayPrincipal);
 
-const $inputValue = document.querySelector("#messageBoxId");
-const $button = document.querySelector(".sendButton");
+
+// const $inputValue = document.querySelector("#messageBoxId");
+// const $button = document.querySelector(".sendButton");
+
+const msgContainer=document.getElementById("msgContainer");
+const messageBox=document.createElement('div');
+messageBox.className = "messageBox";
+messageBox.textContent= "Hola";
 
 
-const $messageBox=document.getElementsByClassName(".messageBox");
+console.log(messageBox)
+console.log(msgContainer)
 
-const messageMetaData=document.createElement("div");
-        $messageBox.appendChild(messageMetaData)
-        
 
-        
+msgContainer.appendChild(messageBox);
+
+
+
+
+
 
 
 
