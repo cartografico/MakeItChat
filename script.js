@@ -36,30 +36,30 @@ const arrayChannels = [
     name: "Canal2",
     content: [
       {
-        author: "Thomas Anderson",
+        author: "Eliot Alderson",
         time: "13:00",
-        avatar: "img/avatar.jpg",
+        avatar: "img/cowboy.png",
         text:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+        "Fuck society",
       },
       {
         author: "Thomas Anderson",
         time: "13:00",
-        avatar: "img/avatar.jpg",
+        avatar: "img/cowboy.png",
         text:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "El problema es la elección",
       },
       {
-        author: "Thomas Anderson",
+        author: "Jhonny Mnemonic",
         time: "13:00",
-        avatar: "img/avatar.jpg",
+        avatar: "img/cowboy.png",
         text:
-          "Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+          "I'm just a hard drive, man",
       },
     ],
   },
 ];
-console.log(arrayChannels);
+
 
 
 //const $inputValue = document.querySelector("#messageBoxId");
@@ -85,78 +85,50 @@ const channel = getChannel(nameChannel);
 function printMessage (channel){
 
     channel.content.forEach( function (message) {
-    //llamar elementos del dom para crearlos en variable
-    const $messageBox = document.getElementById("messageBox");
-    const $messageMetaData = document.getElementById("messageMetaData");
-    const $avatarImage = document.getElementById("avatarImage");
-    const $userName = document.getElementById("userName");
-    const $userMessage = document.getElementById("userMessage");
-    const $textMessage = document.getElementById("textMessage");
-   
-    //creación de elemento y asignación de atributos
+     //creación de elemento y asignación de atributos
+
     const messageBox = document.createElement('div');
-    messageBox.className = "messageBox";
-    messageBox.appendChild(messageMetaData)
-
     const messageMetaData = document.createElement('div');
-    messageMetaData.className = "messageMetaData";
-    
-
+    const avatar = document.createElement('img')
     const avatarImage = document.createElement('div');
-    avatarImage.className = "avatarImage";
-
     const userName = document.createElement('div');
-    userName.className = "userName";
     const timeStamp = document.createElement('div');
-    timeStamp.className="timeStamp";
     const userMessage = document.createElement('div');
-    userMessage.className = "userMessage";
     const textMessage = document.createElement('p');
+    
+    
+    messageBox.className = "messageBox";
+    messageBox.appendChild(messageMetaData);
+
+    messageMetaData.className = "messageBox";
+    messageMetaData.appendChild(avatar);
+    avatar.src = message.avatar
+
+    messageMetaData.className = "messageMetaData";
+    messageMetaData.appendChild(avatarImage);
+
+    avatarImage.className = "avatarImage";
+    messageMetaData.appendChild(avatarImage)
+
+    userName.className = "userName";
+    messageMetaData.appendChild(userName);
+    userName.textContent = message.author;
+
+    timeStamp.className="timeStamp";
+    messageMetaData.appendChild(timeStamp);
+    timeStamp.textContent= message.time;
+
+    userMessage.className = "userMessage";
+    messageBox.appendChild(userMessage);
+
     textMessage.className = "userMessage";
+    userMessage.appendChild(textMessage)
+    textMessage.textContent = message.text;
 
-    
+    msgContainer.appendChild(messageBox);
 
-    
-        
+  });
 
-
-
-    container.appendChild(message.text);
-    });
 };
 
-
-// ________________________________________
-//   function renderMessage(message) {
-    
-
-
-
-//     const messageDiv = create('div');
-//     const nameDiv = create('div')
-//     const textDiv = create('div')
-    
-//     nameDiv.append(message.userName)
-//     textDiv.append(message.text)  
-  
-//     messageDiv.append(nameDiv);
-//     messageDiv.append(textDiv);
-  
-//     return messageDiv;
-//   }
-  
-//     channel.content.forEach( function (message) {
-//     container.appendChild(renderMessage(message));
-//   });
-
-// ________ para añadir despues de la creación del div con los demás elementos
-//   const msgContainer=document.getElementById("msgContainer");
-//   const messageBox=document.createElement('div');
-//   messageBox.className = "messageBox";
-//   messageBox.textContent= "Hola";
-  
-//   msgContainer.appendChild(messageBox);
-  
-//   console.log(msgContainer)
-//   console.log(messageBox)
-
+printMessage(channel)
