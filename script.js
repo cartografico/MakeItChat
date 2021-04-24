@@ -1,8 +1,3 @@
-
-
-
-console.log("ït works!");
-
 // object structure
 
 const arrayChannels = [
@@ -62,10 +57,7 @@ const arrayChannels = [
 
 
 
-//const $inputValue = document.querySelector("#messageBoxId");
-//const $button = document.querySelector(".sendButton");
-
-//___________________ Cambiar por la variable del evento click________________
+//_______ Cambiar por la variable del evento click________________
 const nameChannel= "Canal2";
 
 
@@ -132,3 +124,69 @@ function printMessage (channel){
 };
 
 printMessage(channel)
+
+//capture info from input event
+//_____ get input function______
+
+
+const $form = document.getElementById("chatForm");
+const $inputValue= document.getElementById("inputText").value;
+const $buttonSubmit = document.getElementById("sendButton");
+
+// $form.addEventListener("submit", (evt) =>{
+//     evt.preventDefault();
+//     evt.stopPropagation();
+// });
+
+
+
+
+function messageObject(author, time, avatar, text){
+        this.author = author;
+        this. time = time;
+        this.avatar = avatar;
+        this.text = text;
+};
+
+$buttonSubmit.addEventListener("click",function (evt) {
+    evt.preventDefault();
+    evt.stopPropagation()
+
+
+    // const author= "Sigfrid Blake";
+    // const time = "19:05";
+    // const avatar = "img/avatarSig.png"
+    // const text = $inputValue;
+    
+    const messageObject = {
+        author: "Sigfrid Blake",
+        time: "19:05",
+        avatar: "img/avatarSig.png",
+        text: $inputValue,
+    };
+    // const msg = messageObject(author,time,avatar,text);
+    
+    arrayChannels[1].content.push(messageObject);
+    console.log(channel)
+    printMessage(channel)
+
+});
+
+
+
+
+
+
+
+
+
+
+
+
+//const $button = document.querySelector(".sendButton");
+
+
+
+
+
+console.log("ït works!");
