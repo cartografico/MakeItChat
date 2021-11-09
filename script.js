@@ -130,7 +130,7 @@ printMessage(channel)
 
 
 const $form = document.getElementById("chatForm");
-const $inputValue= document.getElementById("inputText").value;
+const $inputValue =document.getElementById('inputText').value;
 const $buttonSubmit = document.getElementById("sendButton");
 
 // $form.addEventListener("submit", (evt) =>{
@@ -138,19 +138,18 @@ const $buttonSubmit = document.getElementById("sendButton");
 //     evt.stopPropagation();
 // });
 
+console.log($inputValue);
 
 
-
-function messageObject(author, time, avatar, text){
-        this.author = author;
-        this. time = time;
-        this.avatar = avatar;
-        this.text = text;
-};
+// function messageObject(author, time, avatar, text){
+//   this.author = author;
+//   this. time = time;
+//   this.avatar = avatar;
+//   this.text = text;
+// };
 
 $buttonSubmit.addEventListener("click",function (evt) {
     evt.preventDefault();
-    evt.stopPropagation()
 
 
     // const author= "Sigfrid Blake";
@@ -167,26 +166,10 @@ $buttonSubmit.addEventListener("click",function (evt) {
     // const msg = messageObject(author,time,avatar,text);
     
     arrayChannels[1].content.push(messageObject);
-    console.log(channel)
     printMessage(channel)
 
 });
 
-
-
-
-
-
-
-
-
-
-
-
 //const $button = document.querySelector(".sendButton");
-
-
-
-
 
 console.log("ït works!");
